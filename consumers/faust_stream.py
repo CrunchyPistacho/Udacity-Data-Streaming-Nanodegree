@@ -29,41 +29,35 @@ class TransformedStation(faust.Record):
     line: str
 
 
-app = faust.App("stations-stream",
-                broker="kafka://localhost:9092", store="memory://")
-topic = app.topic("postgres_conn_stations", value_type=Station)
-out_topic = app.topic("stations", partitions=1)
+app = faust.App("stations-stream", broker=[
+                    "kafka://localhost:9092",
+                    "kafka://localhost:9093",
+                    "kafka://localhost:9094",
+                ], store="memory://")
+# TODO: Define the input Kafka Topic. Hint: What topic did Kafka Connect output to?
+topic = app.topic("org.chicago.cta.stations", value_type=Station)
+# TODO: Define the output Kafka Topic
+out_topic = app.topic("org.chicago.cta.stations.table.v1", partitions=1, value_type=TransformedStation)
+# TODO: Define a Faust Table
 table = app.Table(
-    "trans_station",
-    default=TransformedStation,
-    partitions=1,
-    changelog_topic=out_topic,
+   "org.chicago.cta.stations.table.v1",
+   default=TransformedStation,
+   partitions=1,
+   changelog_topic=out_topic,
 )
 
-
 @app.agent(topic)
-async def transform(stations):
+async def process(events):
+    async for event in events:
 
-    async for station in stations:
-
-        if station.green:
-            line = 'green'
-        elif station.blue:
-            line = 'blue'
-        elif station.red:
-            line = 'red'
-        else:
-            logger.debug(
-                f"Unable to parse line color with station_id = {station.station_id}")
-            line = ''
-
-        transformed_station = TransformedStation(
-            station_id=station.station_id,
-            station_name=station.station_name,
-            order=station.order,
-            line=line
+        table[event.station_id] = TransformedStation(
+            station_id=event.station_id,
+            station_name=event.station_name,
+            order=event.order,
+            line="red" if event.red else "blue" if event.blue else "green",
         )
-        table[station.id] = transformed_station
+
+
 
 
 if __name__ == "__main__":

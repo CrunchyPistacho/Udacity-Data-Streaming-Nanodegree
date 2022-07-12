@@ -1,3 +1,5 @@
-confluent-kafka[avro]==1.1.0
-pandas==0.24.2
+# confluent-kafka[avro]==1.1.0 Had to switch to version 1.6.1 because on windows this old version is not installing
+confluent-kafka[avro]==1.6.1
+# pandas==  Had to switch to newest version because on windows this old version is not installing
+pandas
 requests==2.22.0

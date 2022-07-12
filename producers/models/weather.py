@@ -8,6 +8,8 @@ import urllib.parse
 
 import requests
 
+from confluent_kafka import avro
+
 from models.producer import Producer
 
 
@@ -32,11 +34,11 @@ class Weather(Producer):
     def __init__(self, month):
 
         super().__init__(
-            "weather.{}".format(month),
+            topic_name="org.chicago.cta.weather.v1",
             key_schema=Weather.key_schema,
             value_schema=Weather.value_schema,
-            num_partitions=1,
-            num_replicas=1
+            num_partitions=3,
+            num_replicas=3
         )
 
         self.status = Weather.status.sunny
@@ -68,7 +70,6 @@ class Weather(Producer):
     def run(self, month):
         self._set_weather(month)
 
-        logger.info("weather kafka proxy integration incomplete - skipping")
         resp = requests.post(
             f"{Weather.rest_proxy_url}/topics/{self.topic_name}",
             headers={"Content-Type": "application/vnd.kafka.avro.v2+json"},
@@ -91,9 +92,9 @@ class Weather(Producer):
         try:
             resp.raise_for_status()
         except:
-            logger.exception(
-                f"Failed to subscribe to the REST proxy consumer: {json.dumps(resp.json(), indent=2)}"
-            )
+            logging.critical(
+                f"Failed sending data to REST Proxy: {json.dumps(resp.json(), indent=2)}")
+
         logger.debug(
             "sent weather data to kafka, temp: %s, status: %s",
             self.temp,

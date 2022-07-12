@@ -10,7 +10,8 @@ import topic_check
 logger = logging.getLogger(__name__)
 
 
-KSQL_URL = "http://ksql:8088"
+KSQL_URL = "http://localhost:8088"
+
 
 KSQL_STATEMENT = """
 CREATE TABLE turnstile (
@@ -18,13 +19,13 @@ CREATE TABLE turnstile (
     station_name VARCHAR,
     line VARCHAR
 ) WITH (
-    KAFKA_TOPIC='stations.table',
-    VALUE_FORMAT='AVRO',
-    KEY='station_id'
+    KAFKA_TOPIC = 'org.chicago.cta.turnstiles',
+    VALUE_FORMAT = 'AVRO',
+    KEY = 'station_id'
 );
 CREATE TABLE turnstile_summary
-WITH (VALUE_FORMAT='JSON') AS
-    SELECT station_id, COUNT(*) AS count
+WITH (VALUE_FORMAT = 'JSON') AS
+    SELECT COUNT(station_id) AS count
     FROM turnstile
     GROUP BY station_id;
 """
@@ -33,8 +34,7 @@ WITH (VALUE_FORMAT='JSON') AS
 def execute_statement():
     """Executes the KSQL statement against the KSQL API"""
     if topic_check.topic_exists("TURNSTILE_SUMMARY") is True:
-        logger.info("Topic exists")
-        return 200
+        return
 
     logging.debug("executing ksql statement...")
 
@@ -48,7 +48,7 @@ def execute_statement():
             }
         ),
     )
-    
+
     # Ensure that a 2XX status code was returned
     resp.raise_for_status()
 

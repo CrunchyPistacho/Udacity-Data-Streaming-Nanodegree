@@ -56,15 +56,15 @@ class Line:
 
     def process_message(self, message):
         """Given a kafka message, extract data"""
-        if message.topic() == "stations.table": # Set the conditional correctly to the stations Faust Table
+        if message.topic == "^org.chicago.cta.stations.":
             try:
                 value = json.loads(message.value())
                 self._handle_station(value)
             except Exception as e:
                 logger.fatal("bad station? %s, %s", value, e)
-        elif message.topic().startswith("station"): # Set the conditional to the arrival topic
+        elif message.topic == "^org.chicago.cta.arrivals.":
             self._handle_arrival(message)
-        elif message.topic() == "turnstile_summary": # Set the conditional to the KSQL Turnstile Summary Topic
+        elif message.topic == "org.chicago.cta.turnstiles":
             json_data = json.loads(message.value())
             station_id = json_data.get("STATION_ID")
             station = self.stations.get(station_id)

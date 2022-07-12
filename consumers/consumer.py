@@ -31,20 +31,19 @@ class KafkaConsumer:
         self.offset_earliest = offset_earliest
 
         self.broker_properties = {
-            "bootstrap.servers": "PLAINTEXT://localhost:9092",
+            'bootstrap.servers': 'PLAINTEXT://kafka0:9092,PLAINTEXT://kafka1:9093,PLAINTEXT://kafka2:9094',
             "group.id": f"{self.topic_name_pattern}",
             "auto.offset.reset": "earliest" if offset_earliest else "latest"
         }
 
         if is_avro is True:
-            self.broker_properties["schema.registry.url"] = "http://localhost:8081"
-            self.consumer = AvroConsumer(self.broker_properties)
+            self.broker_properties["schema.registry.url"] = "http://schema-registry:8081/"
+            self.consumer = AvroConsumer(config=self.broker_properties)
         else:
-            self.consumer = Consumer(self.broker_properties)
-            pass
+            self.consumer = Consumer({'bootstrap.servers': self.broker_properties.get('bootstrap.servers'),
+                                      'group.id': self.broker_properties.get('group.id')})
 
-        self.consumer.subscribe(
-            [self.topic_name_pattern], on_assign=self.on_assign)
+        self.consumer.subscribe([topic_name_pattern], on_assign=self.on_assign)
 
     def on_assign(self, consumer, partitions):
         """Callback for when topic assignment takes place"""
@@ -64,15 +63,14 @@ class KafkaConsumer:
 
     def _consume(self):
         """Polls for a message. Returns 1 if a message was received, 0 otherwise"""
-        try:
-            message = self.consumer.poll(1.0)
-        except SerializerError as er:
-            logger.error(f"Error while consuming data: {er.message}")
-            return 0
-
-        self.message_handler(message)
-        logger.info("_consume is incomplete - skipping")
-        return 0
+        while True:
+            message = self.consumer.poll(timeout=1.0)
+            if message is None:
+                return 0
+            elif message.error():
+                logger.error(message.error())
+            else:
+                return 1
 
     def close(self):
         """Cleans up any open kafka consumers"""

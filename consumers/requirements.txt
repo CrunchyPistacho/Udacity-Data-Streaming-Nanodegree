@@ -1,3 +1,5 @@
-confluent-kafka[avro]==1.1.0
+## Had to switch to version 1.6.1 because on windows this old version is not installing
+# confluent-kafka[avro]==1.1.0
+confluent-kafka[avro]==1.6.1
 faust==1.7.4
 tornado==6.0.3

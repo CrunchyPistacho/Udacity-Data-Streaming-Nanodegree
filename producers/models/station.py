@@ -29,13 +29,11 @@ class Station(Producer):
             .replace("'", "")
         )
 
-        topic_name = f"station.arrivals.{station_name}"
+        topic_name = f"org.chicago.cta.station.arrivals.{station_name}"
         super().__init__(
-            topic_name,
+            topic_name=topic_name,
             key_schema=Station.key_schema,
-            value_schema=Station.value_schema,
-            num_partitions=1,
-            num_replicas=1,
+            value_schema=Station.value_schema
         )
 
         self.station_id = int(station_id)
@@ -48,22 +46,18 @@ class Station(Producer):
 
     def run(self, train, direction, prev_station_id, prev_direction):
         """Simulates train arrivals at this station"""
-
         self.producer.produce(
             topic=self.topic_name,
             key={"timestamp": self.time_millis()},
-            key_schema=self.key_schema,
             value={
                 "station_id": self.station_id,
                 "train_id": train.train_id,
-                "direction": direction,
                 "line": self.color.name,
+                "direction": direction,
                 "train_status": train.status.name,
                 "prev_station_id": prev_station_id,
                 "prev_direction": prev_direction
             },
-            value_schema=self.value_schema,
-
         )
 
     def __str__(self):
