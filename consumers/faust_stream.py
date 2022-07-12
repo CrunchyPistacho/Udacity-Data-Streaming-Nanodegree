@@ -35,11 +35,11 @@ app = faust.App("stations-stream", broker=[
                     "kafka://localhost:9094",
                 ], store="memory://")
 topic = app.topic("org.chicago.cta.stations", value_type=Station)
-out_topic = app.topic("org.chicago.cta.stations.table.v1", partitions=3)
+out_topic = app.topic("org.chicago.cta.stations.table.v1", partitions=1)
 table = app.Table(
    "org.chicago.cta.stations.table.v1",
    default=TransformedStation,
-   partitions=3,
+   partitions=1,
    changelog_topic=out_topic,
 )
 
@@ -65,7 +65,7 @@ async def transform(stations):
             order=station.order,
             line=line
         )
-        table[station.id] = transformed_station
+        table[station.station_id] = transformed_station
 
 
 
