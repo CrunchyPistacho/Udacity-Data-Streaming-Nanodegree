@@ -37,7 +37,7 @@ app = faust.App("stations-stream", broker=[
 # TODO: Define the input Kafka Topic. Hint: What topic did Kafka Connect output to?
 topic = app.topic("org.chicago.cta.stations", value_type=Station)
 # TODO: Define the output Kafka Topic
-out_topic = app.topic("org.chicago.cta.stations.table.v1", partitions=1, value_type=TransformedStation)
+out_topic = app.topic("org.chicago.cta.stations.table.v1", partitions=3)
 # TODO: Define a Faust Table
 table = app.Table(
    "org.chicago.cta.stations.table.v1",
@@ -47,15 +47,28 @@ table = app.Table(
 )
 
 @app.agent(topic)
-async def process(events):
-    async for event in events:
+async def transform(stations):
 
-        table[event.station_id] = TransformedStation(
-            station_id=event.station_id,
-            station_name=event.station_name,
-            order=event.order,
-            line="red" if event.red else "blue" if event.blue else "green",
+    async for station in stations:
+
+        if station.green:
+            line = 'green'
+        elif station.blue:
+            line = 'blue'
+        elif station.red:
+            line = 'red'
+        else:
+            logger.debug(
+                f"Unable to parse line color with station_id = {station.station_id}")
+            line = ''
+
+        transformed_station = TransformedStation(
+            station_id=station.station_id,
+            station_name=station.station_name,
+            order=station.order,
+            line=line
         )
+        table[station.id] = transformed_station
 
 
 
