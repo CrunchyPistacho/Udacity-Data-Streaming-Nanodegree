@@ -70,6 +70,7 @@ class KafkaConsumer:
             elif message.error():
                 logger.error(message.error())
             else:
+                self.message_handler(message)
                 return 1
 
     def close(self):

@@ -1,6 +1,7 @@
 """Contains functionality related to Lines"""
 import json
 import logging
+import re
 
 from models import Station
 
@@ -56,15 +57,15 @@ class Line:
 
     def process_message(self, message):
         """Given a kafka message, extract data"""
-        if message.topic == "^org.chicago.cta.stations.":
+        if re.match("^org.chicago.cta.stations.",message.topic):
             try:
                 value = json.loads(message.value())
                 self._handle_station(value)
             except Exception as e:
                 logger.fatal("bad station? %s, %s", value, e)
-        elif message.topic == "^org.chicago.cta.arrivals.":
+        elif re.match("^org.chicago.cta.arrivals.",message.topic):
             self._handle_arrival(message)
-        elif message.topic == "org.chicago.cta.turnstiles":
+        elif re.match("^org.chicago.cta.turnstiles.",message.topic):
             json_data = json.loads(message.value())
             station_id = json_data.get("STATION_ID")
             station = self.stations.get(station_id)
