@@ -1,0 +1,223 @@
+:: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-8738d52f-251a-42a7-8e7b-850bfe7715f1;1.0
+	confs: [default]
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.0.0 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.0.0 in central
+	found org.apache.kafka#kafka-clients;2.4.1 in central
+	found com.github.luben#zstd-jni;1.4.4-3 in central
+	found org.lz4#lz4-java;1.7.1 in central
+	found org.xerial.snappy#snappy-java;1.1.7.5 in central
+	found org.slf4j#slf4j-api;1.7.30 in central
+	found org.spark-project.spark#unused;1.0.0 in central
+	found org.apache.commons#commons-pool2;2.6.2 in central
+:: resolution report :: resolve 2544ms :: artifacts dl 331ms
+	:: modules in use:
+	com.github.luben#zstd-jni;1.4.4-3 from central in [default]
+	org.apache.commons#commons-pool2;2.6.2 from central in [default]
+	org.apache.kafka#kafka-clients;2.4.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.0.0 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.0.0 from central in [default]
+	org.lz4#lz4-java;1.7.1 from central in [default]
+	org.slf4j#slf4j-api;1.7.30 from central in [default]
+	org.spark-project.spark#unused;1.0.0 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.7.5 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   9   |   0   |   0   |   0   ||   9   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-8738d52f-251a-42a7-8e7b-850bfe7715f1
+	confs: [default]
+	0 artifacts copied, 9 already retrieved (0kB/67ms)
+22/07/19 15:02:22 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/07/19 15:02:23 INFO SparkContext: Running Spark version 3.2.1
+22/07/19 15:02:23 INFO ResourceUtils: ==============================================================
+22/07/19 15:02:23 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/07/19 15:02:23 INFO ResourceUtils: ==============================================================
+22/07/19 15:02:23 INFO SparkContext: Submitted application: customer-data
+22/07/19 15:02:24 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/07/19 15:02:24 INFO ResourceProfile: Limiting resource is cpu
+22/07/19 15:02:24 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/07/19 15:02:24 INFO SecurityManager: Changing view acls to: spark
+22/07/19 15:02:24 INFO SecurityManager: Changing modify acls to: spark
+22/07/19 15:02:24 INFO SecurityManager: Changing view acls groups to: 
+22/07/19 15:02:24 INFO SecurityManager: Changing modify acls groups to: 
+22/07/19 15:02:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(spark); groups with view permissions: Set(); users  with modify permissions: Set(spark); groups with modify permissions: Set()
+22/07/19 15:02:24 INFO Utils: Successfully started service 'sparkDriver' on port 37097.
+22/07/19 15:02:24 INFO SparkEnv: Registering MapOutputTracker
+22/07/19 15:02:24 INFO SparkEnv: Registering BlockManagerMaster
+22/07/19 15:02:24 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/07/19 15:02:24 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/07/19 15:02:24 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/07/19 15:02:24 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-9fe78044-38c5-40f5-bd4f-6ba6fff3e291
+22/07/19 15:02:24 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+22/07/19 15:02:24 INFO SparkEnv: Registering OutputCommitCoordinator
+22/07/19 15:02:25 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+22/07/19 15:02:25 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+22/07/19 15:02:25 INFO Utils: Successfully started service 'SparkUI' on port 4042.
+22/07/19 15:02:25 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://bd0f6e208e07:4042
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar at spark://bd0f6e208e07:37097/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar at spark://bd0f6e208e07:37097/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar at spark://bd0f6e208e07:37097/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar at spark://bd0f6e208e07:37097/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at spark://bd0f6e208e07:37097/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar at spark://bd0f6e208e07:37097/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar at spark://bd0f6e208e07:37097/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar at spark://bd0f6e208e07:37097/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar at spark://bd0f6e208e07:37097/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.kafka_kafka-clients-2.4.1.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.commons_commons-pool2-2.6.2.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.spark-project.spark_unused-1.0.0.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar at file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/com.github.luben_zstd-jni-1.4.4-3.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.lz4_lz4-java-1.7.1.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar at file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.xerial.snappy_snappy-java-1.1.7.5.jar
+22/07/19 15:02:25 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar at file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658242943891
+22/07/19 15:02:25 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.slf4j_slf4j-api-1.7.30.jar
+22/07/19 15:02:26 INFO Executor: Starting executor ID driver on host bd0f6e208e07
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/com.github.luben_zstd-jni-1.4.4-3.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.xerial.snappy_snappy-java-1.1.7.5.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.kafka_kafka-clients-2.4.1.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.commons_commons-pool2-2.6.2.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.spark-project.spark_unused-1.0.0.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.lz4_lz4-java-1.7.1.jar
+22/07/19 15:02:26 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658242943891
+22/07/19 15:02:26 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.slf4j_slf4j-api-1.7.30.jar
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO TransportClientFactory: Successfully created connection to bd0f6e208e07/172.24.0.4:37097 after 55 ms (0 ms spent in bootstraps)
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp4728752967722658709.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp4728752967722658709.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.apache.commons_commons-pool2-2.6.2.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp5093737062732160524.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp5093737062732160524.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.commons_commons-pool2-2.6.2.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.commons_commons-pool2-2.6.2.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/com.github.luben_zstd-jni-1.4.4-3.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp3219050489604091708.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp3219050489604091708.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/com.github.luben_zstd-jni-1.4.4-3.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/com.github.luben_zstd-jni-1.4.4-3.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.apache.kafka_kafka-clients-2.4.1.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp3799694844415873926.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp3799694844415873926.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.kafka_kafka-clients-2.4.1.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.kafka_kafka-clients-2.4.1.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp5316359224398835649.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp5316359224398835649.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.xerial.snappy_snappy-java-1.1.7.5.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.xerial.snappy_snappy-java-1.1.7.5.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp9082511685033820460.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp9082511685033820460.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.spark-project.spark_unused-1.0.0.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.spark-project.spark_unused-1.0.0.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp5018281056429800872.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp5018281056429800872.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.slf4j_slf4j-api-1.7.30.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp3169137630654627603.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp3169137630654627603.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.slf4j_slf4j-api-1.7.30.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.slf4j_slf4j-api-1.7.30.jar to class loader
+22/07/19 15:02:27 INFO Executor: Fetching spark://bd0f6e208e07:37097/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658242943891
+22/07/19 15:02:27 INFO Utils: Fetching spark://bd0f6e208e07:37097/jars/org.lz4_lz4-java-1.7.1.jar to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp1777775252701053216.tmp
+22/07/19 15:02:27 INFO Utils: /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/fetchFileTemp1777775252701053216.tmp has been previously copied to /tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.lz4_lz4-java-1.7.1.jar
+22/07/19 15:02:27 INFO Executor: Adding file:/tmp/spark-11c55556-e2c5-416a-8509-21e4941dc40f/userFiles-4baf110f-4518-43d4-b8fa-a33e252ac873/org.lz4_lz4-java-1.7.1.jar to class loader
+22/07/19 15:02:27 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45945.
+22/07/19 15:02:27 INFO NettyBlockTransferService: Server created on bd0f6e208e07:45945
+22/07/19 15:02:27 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/07/19 15:02:27 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, bd0f6e208e07, 45945, None)
+22/07/19 15:02:27 INFO BlockManagerMasterEndpoint: Registering block manager bd0f6e208e07:45945 with 366.3 MiB RAM, BlockManagerId(driver, bd0f6e208e07, 45945, None)
+22/07/19 15:02:27 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, bd0f6e208e07, 45945, None)
+22/07/19 15:02:27 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, bd0f6e208e07, 45945, None)
+22/07/19 15:02:28 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+22/07/19 15:02:28 INFO SharedState: Warehouse path is 'file:/opt/bitnami/spark/spark-warehouse'.
+22/07/19 15:02:37 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+22/07/19 15:02:38 ERROR MicroBatchExecution: Query [id = f674560e-9494-4d37-a813-91b0d54946f8, runId = 23f67102-4f76-4fe3-a9f1-9de2fde5f8e8] terminated with error
+java.lang.NoClassDefFoundError: org/apache/spark/sql/internal/connector/SupportsStreamingUpdate
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:473)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable.newWriteBuilder(KafkaSourceProvider.scala:397)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.createStreamingWrite(StreamExecution.scala:590)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan$lzycompute(MicroBatchExecution.scala:140)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan(MicroBatchExecution.scala:59)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:295)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:286)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:209)
+Caused by: java.lang.ClassNotFoundException: org.apache.spark.sql.internal.connector.SupportsStreamingUpdate
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 20 more
+Exception in thread "stream execution thread for [id = f674560e-9494-4d37-a813-91b0d54946f8, runId = 23f67102-4f76-4fe3-a9f1-9de2fde5f8e8]" java.lang.NoClassDefFoundError: org/apache/spark/sql/internal/connector/SupportsStreamingUpdate
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:756)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:473)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at org.apache.spark.sql.kafka010.KafkaSourceProvider$KafkaTable.newWriteBuilder(KafkaSourceProvider.scala:397)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.createStreamingWrite(StreamExecution.scala:590)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan$lzycompute(MicroBatchExecution.scala:140)
+	at org.apache.spark.sql.execution.streaming.MicroBatchExecution.logicalPlan(MicroBatchExecution.scala:59)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.$anonfun$runStream$1(StreamExecution.scala:295)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:775)
+	at org.apache.spark.sql.execution.streaming.StreamExecution.org$apache$spark$sql$execution$streaming$StreamExecution$$runStream(StreamExecution.scala:286)
+	at org.apache.spark.sql.execution.streaming.StreamExecution$$anon$1.run(StreamExecution.scala:209)
+Caused by: java.lang.ClassNotFoundException: org.apache.spark.sql.internal.connector.SupportsStreamingUpdate
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 20 more
+Traceback (most recent call last):
+  File "/home/workspace/starter/sparkpykafkajoin.py", line 261, in <module>
+    riskScoreByBirthYear \
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/streaming.py", line 101, in awaitTermination
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1321, in __call__
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 117, in deco
+pyspark.sql.utils.StreamingQueryException: org/apache/spark/sql/internal/connector/SupportsStreamingUpdate
+=== Streaming Query ===
+Identifier: [id = f674560e-9494-4d37-a813-91b0d54946f8, runId = 23f67102-4f76-4fe3-a9f1-9de2fde5f8e8]
+Current Committed Offsets: {}
+Current Available Offsets: {}
+
+Current State: INITIALIZING
+Thread State: RUNNABLE

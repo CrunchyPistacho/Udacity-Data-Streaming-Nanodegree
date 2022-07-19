@@ -9,7 +9,7 @@ customer_risk_schema = StructType(
         StructField("riskDate", DateType())
     ]
 )
- 
+
 spark = SparkSession.builder.appName("customer-risk-score").getOrCreate()
 spark.sparkContext.setLogLevel('WARN')
 
@@ -21,7 +21,8 @@ stedi_events_stream = spark \
     .option("startingOffsets", "earliest") \
     .load()
 
-stedi_events_stream = stedi_events_stream.selectExpr("cast(value as string) value")
+stedi_events_stream = stedi_events_stream.selectExpr(
+    "cast(value as string) value")
 
 stedi_events_stream \
     .withColumn("value", from_json("value", customer_risk_schema)) \
@@ -36,4 +37,4 @@ customerRiskStreamingDF \
     .outputMode("append") \
     .format("console") \
     .start() \
-    .awaitTermination() 
+    .awaitTermination()
