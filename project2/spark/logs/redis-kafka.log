@@ -1,0 +1,946 @@
+:: loading settings :: url = jar:file:/opt/bitnami/spark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /opt/bitnami/spark/.ivy2/cache
+The jars for the packages stored in: /opt/bitnami/spark/.ivy2/jars
+org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-07554ef9-4425-4cd1-8fd6-8c5b98e158b1;1.0
+	confs: [default]
+	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.0.0 in central
+	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.0.0 in central
+	found org.apache.kafka#kafka-clients;2.4.1 in central
+	found com.github.luben#zstd-jni;1.4.4-3 in central
+	found org.lz4#lz4-java;1.7.1 in central
+	found org.xerial.snappy#snappy-java;1.1.7.5 in central
+	found org.slf4j#slf4j-api;1.7.30 in central
+	found org.spark-project.spark#unused;1.0.0 in central
+	found org.apache.commons#commons-pool2;2.6.2 in central
+:: resolution report :: resolve 1831ms :: artifacts dl 351ms
+	:: modules in use:
+	com.github.luben#zstd-jni;1.4.4-3 from central in [default]
+	org.apache.commons#commons-pool2;2.6.2 from central in [default]
+	org.apache.kafka#kafka-clients;2.4.1 from central in [default]
+	org.apache.spark#spark-sql-kafka-0-10_2.12;3.0.0 from central in [default]
+	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.0.0 from central in [default]
+	org.lz4#lz4-java;1.7.1 from central in [default]
+	org.slf4j#slf4j-api;1.7.30 from central in [default]
+	org.spark-project.spark#unused;1.0.0 from central in [default]
+	org.xerial.snappy#snappy-java;1.1.7.5 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   9   |   0   |   0   |   0   ||   9   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-07554ef9-4425-4cd1-8fd6-8c5b98e158b1
+	confs: [default]
+	0 artifacts copied, 9 already retrieved (0kB/71ms)
+22/07/20 15:03:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+22/07/20 15:04:01 INFO SparkContext: Running Spark version 3.2.1
+22/07/20 15:04:01 INFO ResourceUtils: ==============================================================
+22/07/20 15:04:01 INFO ResourceUtils: No custom resources configured for spark.driver.
+22/07/20 15:04:01 INFO ResourceUtils: ==============================================================
+22/07/20 15:04:01 INFO SparkContext: Submitted application: sparkpyrediskafkastreamtoconsole
+22/07/20 15:04:01 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/07/20 15:04:01 INFO ResourceProfile: Limiting resource is cpu
+22/07/20 15:04:01 INFO ResourceProfileManager: Added ResourceProfile id: 0
+22/07/20 15:04:01 INFO SecurityManager: Changing view acls to: spark
+22/07/20 15:04:01 INFO SecurityManager: Changing modify acls to: spark
+22/07/20 15:04:01 INFO SecurityManager: Changing view acls groups to: 
+22/07/20 15:04:01 INFO SecurityManager: Changing modify acls groups to: 
+22/07/20 15:04:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(spark); groups with view permissions: Set(); users  with modify permissions: Set(spark); groups with modify permissions: Set()
+22/07/20 15:04:01 INFO Utils: Successfully started service 'sparkDriver' on port 39549.
+22/07/20 15:04:01 INFO SparkEnv: Registering MapOutputTracker
+22/07/20 15:04:01 INFO SparkEnv: Registering BlockManagerMaster
+22/07/20 15:04:02 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/07/20 15:04:02 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/07/20 15:04:02 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+22/07/20 15:04:02 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b11c1bd9-f836-4587-9e3c-3b8d6a01e83e
+22/07/20 15:04:02 INFO MemoryStore: MemoryStore started with capacity 366.3 MiB
+22/07/20 15:04:02 INFO SparkEnv: Registering OutputCommitCoordinator
+22/07/20 15:04:02 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+22/07/20 15:04:02 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+22/07/20 15:04:02 INFO Utils: Successfully started service 'SparkUI' on port 4042.
+22/07/20 15:04:02 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://078fcf89b124:4042
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar at spark://078fcf89b124:39549/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar at spark://078fcf89b124:39549/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar at spark://078fcf89b124:39549/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar at spark://078fcf89b124:39549/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at spark://078fcf89b124:39549/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar at spark://078fcf89b124:39549/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar at spark://078fcf89b124:39549/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar at spark://078fcf89b124:39549/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added JAR file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar at spark://078fcf89b124:39549/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+22/07/20 15:04:02 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+22/07/20 15:04:02 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658329441080
+22/07/20 15:04:02 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.kafka_kafka-clients-2.4.1.jar
+22/07/20 15:04:03 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar at file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.commons_commons-pool2-2.6.2.jar
+22/07/20 15:04:03 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar at file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.spark-project.spark_unused-1.0.0.jar
+22/07/20 15:04:03 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar at file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/com.github.luben_zstd-jni-1.4.4-3.jar
+22/07/20 15:04:03 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar at file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.lz4_lz4-java-1.7.1.jar
+22/07/20 15:04:03 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar at file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.xerial.snappy_snappy-java-1.1.7.5.jar
+22/07/20 15:04:03 INFO SparkContext: Added file file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar at file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: Copying /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.slf4j_slf4j-api-1.7.30.jar
+22/07/20 15:04:03 INFO Executor: Starting executor ID driver on host 078fcf89b124
+22/07/20 15:04:03 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+22/07/20 15:04:03 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658329441080
+22/07/20 15:04:03 INFO Utils: /opt/bitnami/spark/.ivy2/jars/com.github.luben_zstd-jni-1.4.4-3.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/com.github.luben_zstd-jni-1.4.4-3.jar
+22/07/20 15:04:03 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.xerial.snappy_snappy-java-1.1.7.5.jar
+22/07/20 15:04:04 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.kafka_kafka-clients-2.4.1.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.kafka_kafka-clients-2.4.1.jar
+22/07/20 15:04:04 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+22/07/20 15:04:04 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.apache.commons_commons-pool2-2.6.2.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.commons_commons-pool2-2.6.2.jar
+22/07/20 15:04:04 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.spark-project.spark_unused-1.0.0.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.spark-project.spark_unused-1.0.0.jar
+22/07/20 15:04:04 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.lz4_lz4-java-1.7.1.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.lz4_lz4-java-1.7.1.jar
+22/07/20 15:04:04 INFO Executor: Fetching file:///opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: /opt/bitnami/spark/.ivy2/jars/org.slf4j_slf4j-api-1.7.30.jar has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.slf4j_slf4j-api-1.7.30.jar
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.apache.kafka_kafka-clients-2.4.1.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO TransportClientFactory: Successfully created connection to 078fcf89b124/192.168.32.5:39549 after 41 ms (0 ms spent in bootstraps)
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.apache.kafka_kafka-clients-2.4.1.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp2937318677253401854.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp2937318677253401854.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.kafka_kafka-clients-2.4.1.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.kafka_kafka-clients-2.4.1.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.slf4j_slf4j-api-1.7.30.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.slf4j_slf4j-api-1.7.30.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp1147925420205682836.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp1147925420205682836.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.slf4j_slf4j-api-1.7.30.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.slf4j_slf4j-api-1.7.30.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.spark-project.spark_unused-1.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.spark-project.spark_unused-1.0.0.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp8181008843135996523.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp8181008843135996523.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.spark-project.spark_unused-1.0.0.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.spark-project.spark_unused-1.0.0.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.lz4_lz4-java-1.7.1.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.lz4_lz4-java-1.7.1.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp7894332767591623576.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp7894332767591623576.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.lz4_lz4-java-1.7.1.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.lz4_lz4-java-1.7.1.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.xerial.snappy_snappy-java-1.1.7.5.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp938130455839503503.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp938130455839503503.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.xerial.snappy_snappy-java-1.1.7.5.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.xerial.snappy_snappy-java-1.1.7.5.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.apache.commons_commons-pool2-2.6.2.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.apache.commons_commons-pool2-2.6.2.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp2164596288807416167.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp2164596288807416167.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.commons_commons-pool2-2.6.2.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.commons_commons-pool2-2.6.2.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp7705895643325416948.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp7705895643325416948.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-sql-kafka-0-10_2.12-3.0.0.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/com.github.luben_zstd-jni-1.4.4-3.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/com.github.luben_zstd-jni-1.4.4-3.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp5623152594747336575.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp5623152594747336575.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/com.github.luben_zstd-jni-1.4.4-3.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/com.github.luben_zstd-jni-1.4.4-3.jar to class loader
+22/07/20 15:04:04 INFO Executor: Fetching spark://078fcf89b124:39549/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar with timestamp 1658329441080
+22/07/20 15:04:04 INFO Utils: Fetching spark://078fcf89b124:39549/jars/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp428048389714149630.tmp
+22/07/20 15:04:04 INFO Utils: /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/fetchFileTemp428048389714149630.tmp has been previously copied to /tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar
+22/07/20 15:04:04 INFO Executor: Adding file:/tmp/spark-f1cf9d01-dbfe-4c37-8598-88da6527ff12/userFiles-074ce2a2-fff5-4ea0-b75a-ec0fab899c75/org.apache.spark_spark-token-provider-kafka-0-10_2.12-3.0.0.jar to class loader
+22/07/20 15:04:04 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 40233.
+22/07/20 15:04:04 INFO NettyBlockTransferService: Server created on 078fcf89b124:40233
+22/07/20 15:04:04 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/07/20 15:04:04 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 078fcf89b124, 40233, None)
+22/07/20 15:04:04 INFO BlockManagerMasterEndpoint: Registering block manager 078fcf89b124:40233 with 366.3 MiB RAM, BlockManagerId(driver, 078fcf89b124, 40233, None)
+22/07/20 15:04:04 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 078fcf89b124, 40233, None)
+22/07/20 15:04:04 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 078fcf89b124, 40233, None)
+22/07/20 15:04:05 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+22/07/20 15:04:05 INFO SharedState: Warehouse path is 'file:/opt/bitnami/spark/spark-warehouse'.
+22/07/20 15:04:14 WARN ResolveWriteToStream: Temporary checkpoint location created which is deleted normally when the query didn't fail: /tmp/temporary-2bb5bcc1-823d-47f9-ad08-59b1c67477bb. If it's required to delete it under any circumstances, please set spark.sql.streaming.forceDeleteTempCheckpointLocation to true. Important to know deleting temp checkpoint folder is best effort.
+22/07/20 15:04:14 WARN ResolveWriteToStream: spark.sql.adaptive.enabled is not supported in streaming DataFrames/Datasets and will be disabled.
+-------------------------------------------
+Batch: 0
+-------------------------------------------
++--------------------+---------+
+|               email|birthYear|
++--------------------+---------+
+|Frank.Abram@test.com|     1965|
+|Larry.Jefferson@t...|     1964|
+|David.Abram@test.com|     1963|
+|Larry.Smith@test.com|     1962|
+|Larry.Staples@tes...|     1961|
+|Gail.Clayton@test...|     1960|
+|Edward.Mitra@test...|     1959|
+|Trevor.Lincoln@te...|     1958|
+|Neeraj.Abram@test...|     1957|
+|  Ashley.Wu@test.com|     1956|
+|  Dan.Abram@test.com|     1955|
+|Jacob.Olson@test.com|     1954|
+|Edward.Khatib@tes...|     1952|
+|Jerry.Lincoln@tes...|     1951|
+|David.Smith@test.com|     1950|
+|Sarah.Harris@test...|     1949|
+| Ben.Hansen@test.com|     1948|
+|Jane.Harris@test.com|     1947|
+|Larry.Doshi@test.com|     1946|
+|  Dan.Ahmed@test.com|     1945|
++--------------------+---------+
+only showing top 20 rows
+
+-------------------------------------------
+Batch: 1
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 2
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 3
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 4
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 5
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 6
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 7
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 8
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 9
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 10
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 11
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 12
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 13
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 14
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 15
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 16
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 17
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 18
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 19
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 20
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 21
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 22
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 23
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 24
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 25
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 26
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 27
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 28
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 29
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 30
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 31
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 32
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 33
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 34
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 35
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 36
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 37
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 38
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 39
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 40
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 41
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 42
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 43
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 44
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 45
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 46
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 47
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 48
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 49
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 50
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 51
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 52
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 53
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 54
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 55
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 56
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 57
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 58
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 59
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 60
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 61
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 62
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 63
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 64
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 65
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 66
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 67
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 68
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 69
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 70
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 71
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 72
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 73
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 74
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 75
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 76
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 77
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 78
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 79
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 80
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 81
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 82
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 83
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 84
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 85
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 86
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 87
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 88
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+-------------------------------------------
+Batch: 89
+-------------------------------------------
++-----+---------+
+|email|birthYear|
++-----+---------+
++-----+---------+
+
+^CERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/clientserver.py", line 475, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/clientserver.py", line 503, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/clientserver.py", line 475, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/opt/bitnami/python/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/context.py", line 292, in signal_handler
+    self.cancelAllJobs()
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/context.py", line 1195, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1321, in __call__
+    return_value = get_return_value(
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 111, in deco
+    return f(*a, **kw)
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o14.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/clientserver.py", line 503, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+Traceback (most recent call last):
+  File "/home/workspace/starter/sparkpyrediskafkastreamtoconsole.py", line 63, in <module>
+    emailAndBirthYearStreamingDF.writeStream.format(
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/streaming.py", line 101, in awaitTermination
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/java_gateway.py", line 1321, in __call__
+  File "/opt/bitnami/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 111, in deco
+  File "/opt/bitnami/spark/python/lib/py4j-0.10.9.3-src.zip/py4j/protocol.py", line 334, in get_return_value
+py4j.protocol.Py4JError: An error occurred while calling o71.awaitTermination
