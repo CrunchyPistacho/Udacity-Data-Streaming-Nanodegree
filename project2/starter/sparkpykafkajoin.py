@@ -114,19 +114,23 @@ customerRiskStreamingDF = spark.sql("""
         score 
     from CustomerRisk
 """
-)
+                                    )
 
 riskScoreByBirthYear = customerRiskStreamingDF.join(emailAndBirthYearStreamingDF, expr("""
     customer = email
 """
-))
+                                                                                       ))
 
-riskScoreByBirthYear \
-    .selectExpr("cast(customer as string) as key", "to_json(struct(*)) as value")\
+riskScoreByBirthYear.writeStream.outputMode(
+    "append").format("console").start().awaitTermination()
+
+riskScoreByBirthYear.selectExpr(
+    "cast(customer as string) as key",
+    "to_json(struct(*)) as value") \
     .writeStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "kafka:19092") \
-    .option("topic", "customer-risk") \
+    .option("topic", "stedi-risk-score") \
     .option("checkpointLocation", "/tmp/kafkacheckpoint") \
     .start() \
     .awaitTermination()
