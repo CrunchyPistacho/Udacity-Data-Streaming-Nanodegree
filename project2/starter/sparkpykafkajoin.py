@@ -121,16 +121,31 @@ riskScoreByBirthYear = customerRiskStreamingDF.join(emailAndBirthYearStreamingDF
 """
                                                                                        ))
 
-riskScoreByBirthYear.writeStream.outputMode(
-    "append").format("console").start().awaitTermination()
+# Si no comentam aquest comando el seguent mai s'executa, si el comentam el seguent falla
+# riskScoreByBirthYear.writeStream.outputMode(
+#     "append").format("console").start().awaitTermination()
 
-riskScoreByBirthYear.selectExpr(
-    "cast(customer as string) as key",
-    "to_json(struct(*)) as value") \
-    .writeStream \
-    .format("kafka") \
-    .option("kafka.bootstrap.servers", "kafka:19092") \
-    .option("topic", "customer-risk") \
-    .option("checkpointLocation", "/tmp/kafkacheckpoint") \
-    .start() \
-    .awaitTermination()
+# riskScoreByBirthYear.selectExpr("cast(customer as string) as key","to_json(struct(*)) as value")\
+#     .writeStream \
+#     .format("kafka")\
+#     .option("kafka.bootstrap.servers", "localhost:9092")\
+#     .option("topic", "customer-risk")\
+#     .option("checkpointLocation", "/tmp/kafkacheckpoint")\
+#     .start()\
+#     .awaitTermination()
+
+query=riskScoreByBirthYear.selectExpr("To_JSON(struct(*)) AS value").writeStream\
+.outputMode('append').format("kafka") \
+.option("kafka.bootstrap.servers", "kafka:19092")\
+.option("FailOnDataLoss" , "False").option("checkpointLocation","checkpoint")\
+.option("topic", "customer-risk")\
+.start();
+query_runner=riskScoreByBirthYear.selectExpr("To_JSON(struct(*)) AS value").writeStream\
+.outputMode('append')\
+.format("console")\
+.option('truncate' , False)\
+.start()\
+
+query.awaitTermination()
+
+query_runner.awaitTermination()
