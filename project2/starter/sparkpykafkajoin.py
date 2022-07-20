@@ -122,11 +122,11 @@ riskScoreByBirthYear = customerRiskStreamingDF.join(emailAndBirthYearStreamingDF
 ))
 
 riskScoreByBirthYear \
-    .selectExpr("CAST(customer AS STRING) AS key", "to_json(struct(*)) AS value") \
+    .selectExpr("cast(customer as string) as key", "to_json(struct(*)) as value")\
     .writeStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "kafka:19092") \
-    .option("topic", "stedi-events.customer.risk-score") \
+    .option("topic", "customer-risk") \
     .option("checkpointLocation", "/tmp/kafkacheckpoint") \
     .start() \
     .awaitTermination()
