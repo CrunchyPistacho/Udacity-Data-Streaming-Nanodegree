@@ -130,7 +130,7 @@ riskScoreByBirthYear.selectExpr(
     .writeStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "kafka:19092") \
-    .option("topic", "stedi-risk-score") \
+    .option("topic", "customer-risk") \
     .option("checkpointLocation", "/tmp/kafkacheckpoint") \
     .start() \
     .awaitTermination()
